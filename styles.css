@@ -1,0 +1,43 @@
+body{
+background-image:url(back.jpg);
+color:#ffffff;
+}
+
+
+#d{
+ width: 280px;
+    height: 50px;
+}
+
+input{
+    border-radius: 5px;
+    border: 2px solid #ffffff; 
+    width: 50px;
+    height: 50px;
+}
+
+ form{
+     background:black;
+     border-radius: 25px;
+    border: 2px solid #ffffff;
+    padding: 20px; 
+	padding-right: 20px; 
+    width: 290px;
+    height: 350px; 
+}
+
+.fun:hover{
+background:#886A08;
+background-color: #886A08;
+      color:#ffffff
+	   } 
+	  
+.number:hover {background-color: #008CBA;
+    color:#ffffff} 
+	
+.del:hover {background-color: #f44336;
+     color:#ffffff} 
+.op:hover{background-color: #a9014b; 
+color: #ffffff} 
+.eq:hover {background-color: #4CAF50;
+     color:#ffffff} 

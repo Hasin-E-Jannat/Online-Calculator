@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+My calculator
+</title>
+<meta lang="en">
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+<center>
+<header>
+<h1>My Calculator</h1>
+</header>
+<section>
+
+<form name="calc">
+<table>
+<tr>
+<td  colspan=5><input id="d" type="text" name="Display" ></td>
+</tr>
+<tr>
+<td><input id="b" type="button" class="fun" OnClick="calln()" value="ln"></td>
+<td><input id="b" type="button" class="fun" OnClick="callog()" value="log"></td>
+<td><input id="sin" type="button" class="fun" OnClick="calsin()" value="sin"></td>
+<td><input id="b" type="button" class="fun" OnClick="calcos()" value="cos"></td>
+<td><input id="b" type="button" class="fun" OnClick="caltan()" value="tan"></td>
+</tr>
+<tr>
+<td><input id="7" type="button" class="number" OnClick="myfunction(this.id)" value="7"></td>
+<td><input id="8" type="button" class="number"  OnClick="myfunction(this.id)" value="8"></td>
+<td><input id="9" type="button" class="number"  OnClick="myfunction(this.id)" value="9"></td>
+<td><input id="" type="button" class="del" OnClick="del()" value="DEL"></td>
+<td><input id="CLEAR" type="button"  class="del" OnClick="Clear()" value="AC"></td>
+</tr>
+<tr>
+<td><input id="4" type="button" class="number"  OnClick="myfunction(this.id)" value="4"></td>
+<td><input id="5" type="button" class="number"  OnClick="myfunction(this.id)" value="5"></td>
+<td><input id="6" type="button" class="number"  OnClick="myfunction(this.id)" value="6"></td>
+<td><input id="*" type="button" class="op"  OnClick="myfunction(this.id)" value="*"></td>
+<td><input id="/" type="button" class="op" OnClick="myfunction(this.id)" value="/"></td>
+</tr>
+<tr>
+<td><input id="1" type="button" class="number"  OnClick="myfunction(this.id)" value="1"></td>
+<td><input id="2" type="button" class="number"  OnClick="myfunction(this.id)" value="2"></td>
+<td><input id="3" type="button" class="number" OnClick="myfunction(this.id)" value="3"></td>
+<td><input id="+" type="button" class="op" OnClick="myfunction(this.id)" value="+"></td>
+<td><input id="-" type="button" class="op"  OnClick="myfunction(this.id)" value="-"></td>
+</tr>
+<tr>
+<td><input id="0" type="button" class="number"  OnClick="myfunction(this.id)" value="0"></td>
+<td><input id="." type="button" class="number" OnClick="myfunction(this.id)" value="."></td>
+<td><input id="b" type="button" class="fun" OnClick="calsqrt()" value="sqrt"></td>
+<td><input id="b" type="button" class="eq"  OnClick="calculate()" value="="></td>
+<td><input  id="b"type="button" class="eq" OnClick="calculate()" value="Ans"></td>
+</tr>
+</table>
+</form>
+</section>
+<script>
+function myfunction(clickedId){
+document.calc.Display.value+=clickedId;
+}
+function Clear(){
+document.calc.Display.value=" ";
+}
+function calculate(){
+try{
+
+    var exp=eval(document.calc.Display.value);
+    document.calc.Display.value=exp;
+    }catch(err){
+            document.calc.Display.value="error";
+    }
+	}
+function calsqrt(){
+try{
+var rt=Math.sqrt(document.calc.Display.value);
+document.calc.Display.value=rt;
+}catch(err){
+            document.calc.Display.value="error";
+    }
+}
+function calln(){
+try{
+var rt=Math.log(document.calc.Display.value);
+document.calc.Display.value=rt;
+}catch(err){
+            document.calc.Display.value="error";
+    }
+}
+function callog(){
+try{
+var rt=Math.log10(document.calc.Display.value);
+document.calc.Display.value=rt;
+}catch(err){
+            document.calc.Display.value="error";
+    }
+}
+function calsin(){
+try{
+var piRatio = Math.PI / 180;
+var rt=Math.sin(document.calc.Display.value * piRatio);
+document.calc.Display.value=rt;
+}catch(err){
+            document.calc.Display.value="error";
+    }
+}
+function calcos(){
+try{
+var piRatio = Math.PI / 180;
+var rt=Math.cos(document.calc.Display.value * piRatio);
+document.calc.Display.value=rt;
+}catch(err){
+            document.calc.Display.value="error";
+    }
+}
+function caltan(){
+try{
+var piRatio = Math.PI / 180;
+var rt=Math.tan(document.calc.Display.value * piRatio);
+document.calc.Display.value=rt;
+}catch(err){
+            document.calc.Display.value="error";
+    }
+}
+function del() {
+    var value =  document.calc.Display.value;
+    document.calc.Display.value = value.substr(0, value.length - 1);
+}
+</script>
+</center>
+</body>
+</html>
